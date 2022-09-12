@@ -87,6 +87,13 @@ public class TransacaoTest {
 		assertEquals("Thiago",transacao.buscaCliente(3).nome);
 	}
 	
+	@Test
+	public void buscaClienteIdNuloTest() {
+		
+		transacao.alugueis.add(locacao1);
+		assertNull(transacao.buscaCliente(30));
+	}
+	
 	@Test 
 	public void calculoLucroTest() {
 		

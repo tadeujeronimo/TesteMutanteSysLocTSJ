@@ -30,13 +30,22 @@ public class Cliente {
 	}
 	
 	public Filme buscaFilmeFavorito(Filme f) {
-		for (Filme filme: filmesFavoritos) {
+		/*for (Filme filme: filmesFavoritos) {
 			if (filme == f) {
 				return filme;
 			}
 		}
 		filmesFavoritos.add(f);
-		return f;
+		return f;*/
+		int aux = this.filmesFavoritos.indexOf(f);
+		Filme filme = null;
+		if (aux != -1) {
+			filme = this.filmesFavoritos.get(aux);
+		} else {
+			this.filmesFavoritos.add(f);
+			filme = f;
+		}
+		return filme;
 	}
 	
 }
